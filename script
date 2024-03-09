@@ -1,0 +1,60 @@
+local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
+local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
+
+local Window = Fluent:CreateWindow({
+    Title = "DK_NEVER",
+    SubTitle = "by Quang Vuong",
+    Size = UDim2.fromOffset(450,300),
+    Acrylic = true,
+    Theme = "Draker",
+    Minimizekey = Enum.KeyCode.End
+})
+
+local Tabs = {
+    Main = Window:AddTab({ Title = "Main", Icon = "home"}),
+    Setting = Window:AddTab({ Title = "Setting", Icon = "Settings"}),
+    Player = Window:AddTab({ Title = "Player", Icon = "Players"}),
+    Fruit = Window:AddTab({Title = " Devil Fruit" ,Icon = "Cherry"}),
+    Raid = Window:AddTab({ Title = "Raid", Icon = "Swords"}),
+    Race = Window:AddTab({ Title = "Race V4", Icon = "chevrons-right"}),
+    Shop = Window:AddTab({ Title = "Shopping", Icon = "shopping-cart"}),
+    Misc = Window:Addtab({ Title = "Misc", Icon = "list-plus"}),
+    
+}
+
+local Options = Fluent.Options
+
+
+repeat
+    wait()
+until game.Players
+repeat
+    wait()
+until game.Players.LocalPlayer
+repeat
+    wait()
+until game.ReplicatedStorage
+repeat
+    wait()
+until game.ReplicatedStorage:FindFirstChild("Remotes")
+repeat
+    wait()
+until game.Players.LocalPlayer:FindFirstChild("PlayerGui")
+repeat
+    wait()
+until game.Players.LocalPlayer.PlayerGui:FindFirstChild("Main")
+repeat
+    wait()
+until game:GetService("Players")
+repeat
+    wait()
+until game:GetService("Players").LocalPlayer.Character:FindFirstChild("Energy")
+wait(0.1)
+if not game:IsLoaded() then
+    repeat
+        game.Loaded:Wait()
+    until game:IsLoaded()
+end
+
+
