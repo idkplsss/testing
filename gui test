@@ -1,0 +1,18 @@
+if game.PlayId == 2753915549 then
+
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Never Hub", HidePremium = false, Intro = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+local Main = Window:MakeTab({
+	Name = "Auto Farm",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+
+
+
+
+
+end
+Orionlib:Init()
