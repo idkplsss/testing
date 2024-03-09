@@ -1,12 +1,24 @@
-if game.PlayId == 2753915549 then
+ local Player = game.Players.LocalPlayers
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Never Hub", HidePremium = false, Intro = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
-local Main = Window:MakeTab({
-	Name = "Auto Farm",
+local tap1 = Window:MakeTab({
+	Name = "Information",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
+})
+OrionLib:MakeNotification({
+	Name = "Never Hub",
+	Content = "Make By Quang Vuong",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+Tab:AddButton({
+	Name = "speed",
+	Callback = function()
+      		Player.Character.Humanoid.WalkSpeed = 1000
+  	end    
 })
 
 
