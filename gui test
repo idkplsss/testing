@@ -38,14 +38,9 @@ local Tabs = {
 }
 local Options = OrionLib.Options
 
-local Tab = Window:MakeTab({
+local Section = Tab:AddSection({
 	Name = "Main",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
+    Icon = "home"
 })
 
---[[
-Name = <string> - The name of the tab.
-Icon = <string> - The icon of the tab.
-PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
-]]
+OrionLib:Init()
