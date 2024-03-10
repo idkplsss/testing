@@ -23,4 +23,11 @@ local Window = OrionLib:CreateWindow({
     Theme = "Darker",
     MinimizeKey = Enum.KeyCode.End -- Used when theres no MinimizeKeybind
 })
-OrionLib:Init()
+
+Tab:AddButton({
+    Name = "speed",
+    Callback = function()
+              Player.Character.Humanoid.WalkSpeed = 1000
+      end
+})
+Orionlib:Init()
