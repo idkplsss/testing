@@ -1,6 +1,6 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "DK_NEVER HUB", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
-
+local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 --[[
 Name = <string> - The name of the UI.
 HidePremium = <bool> - Whether or not the user details shows Premium status or not.
@@ -37,10 +37,10 @@ local Tabs = {
 	Misc = Window:AddTab({ Title = "Misc", Icon = "list-plus" }),
 }
 local Options = OrionLib.Options
+local Options = Fluent.Options
 
-local Section = Tab:AddSection({
-	Name = "Main",
-    Icon = "home"
+local Main = Window:MakeTab({
+	Name = "Auto Farm leel",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
 })
-
-OrionLib:Init()
