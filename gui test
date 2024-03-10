@@ -22,27 +22,25 @@ local FarmTab = Window:MakeTab({
 	PremiumOnly = false
 })
 --toggles
-Tab:AddToggle({
+FarmTab:AddToggle({
 	Name = "Auto Farm",
 	Default = false,
 	Callback = function(Value)
 		print(value)
+
+       
+
+
+
 	end    
 })
-
-
-
-local SettingTab = Window:MakeTab({
-	Name = "Setiing",
-	Icon = "rbxassetid://9606644121",
-	PremiumOnly = false
+Tab:AddButton({
+    Name = "pick to level up",
+    Callback = function()
+              print("button pressed")
+      end    
 })
 
-local Miss = Window:MakeTab({
-    Name = "Miss",
-    Icon = " rbxassetid://11447063791",
-    PremiumOnly = false
-})
 
 
 
