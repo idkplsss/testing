@@ -37,3 +37,259 @@ local Tabs = {
 	Misc = Window:AddTab({ Title = "Misc", Icon = "list-plus" }),
 }
 local Options = OrionLib.Options
+if m == 2753915549 then
+    World1 = true
+    OldWorld = true
+elseif m == 4442272183 then
+    World2 = true
+    NewWorld = true
+elseif m == 7449423635 then
+    World3 = true
+    ThreeWorld = true
+end
+function CheckQuest()
+    local a = game.Players.LocalPlayer.Data.Level.Value
+    if World1 then
+        if a == 1 or a <= 9 then
+            LevelFarm = 1
+            Name = "Bandit"
+            QuestName = "BanditQuest1"
+            LevelQuest = 1
+            NameMon = "Bandit"
+            CFrameMon = CFrame.new(1145, 17, 1634)
+            VectorMon = Vector3.new(1145, 17, 1634)
+            CFrameQuest = CFrame.new(1060, 17, 1547)
+            VectorQuest = Vector3.new(1060, 17, 1547)
+        elseif a == 10 or a <= 14 then
+            LevelFarm = 3
+            Name = "Monkey"
+            QuestName = "JungleQuest"
+            LevelQuest = 1
+            NameMon = "Monkey"
+            CFrameMon = CFrame.new(-1496, 39, 35)
+            VectorMon = Vector3.new(-1496, 39, 35)
+            CFrameQuest = CFrame.new(-1602, 37, 152)
+            VectorQuest = Vector3.new(-1602, 37, 152)
+        elseif a == 15 or a <= 29 then
+            LevelFarm = 4
+            Name = "Gorilla"
+            QuestName = "JungleQuest"
+            LevelQuest = 2
+            NameMon = "Gorilla"
+            CFrameMon = CFrame.new(-1237, 6, -486)
+            VectorMon = Vector3.new(-1237, 7, -486)
+            CFrameQuest = CFrame.new(-1602, 37, 152)
+            VectorQuest = Vector3.new(-1602, 37, 152)
+        elseif a == 30 or a <= 59 then
+            LevelFarm = 6
+            Name = "Pirate"
+            QuestName = "BuggyQuest1"
+            LevelQuest = 1
+            NameMon = "Pirate"
+            CFrameMon = CFrame.new(-1115, 14, 3938)
+            VectorMon = Vector3.new(-1115, 14, 3938)
+            CFrameQuest = CFrame.new(-1140, 5, 3828)
+            VectorQuest = Vector3.new(-1140, 5, 3828)
+        elseif a == 60 or a <= 74 then
+            LevelFarm = 9
+            Name = "Desert Bandit"
+            QuestName = "DesertQuest"
+            LevelQuest = 1
+            NameMon = "Desert Bandit"
+            CFrameMon = CFrame.new(932, 7, 4484)
+            VectorMon = Vector3.new(932, 7, 4484)
+            CFrameQuest = CFrame.new(897, 7, 4388)
+            VectorQuest = Vector3.new(897, 7, 4388)
+        elseif a == 75 or a <= 89 then
+            LevelFarm = 10
+            Name = "Desert Officer"
+            QuestName = "DesertQuest"
+            LevelQuest = 2
+            NameMon = "Desert Officer"
+            CFrameMon = CFrame.new(1572, 10, 4373)
+            VectorMon = Vector3.new(1572, 10, 4373)
+            CFrameQuest = CFrame.new(897, 7, 4388)
+            VectorQuest = Vector3.new(897, 7, 4388)
+        elseif a == 90 or a <= 99 then
+            LevelFarm = 12
+            Name = "Snow Bandit"
+            QuestName = "SnowQuest"
+            LevelQuest = 1
+            NameMon = "Snow Bandits"
+            CFrameMon = CFrame.new(1289, 150, -1442)
+            VectorMon = Vector3.new(1289, 106, -1442)
+            CFrameQuest = CFrame.new(1386, 87, -1297)
+            VectorQuest = Vector3.new(1386, 87, -1297)
+        elseif a == 100 or a <= 119 then
+            LevelFarm = 13
+            Name = "Snowman"
+            QuestName = "SnowQuest"
+            LevelQuest = 2
+            NameMon = "Snowman"
+            CFrameMon = CFrame.new(1289, 150, -1442)
+            VectorMon = Vector3.new(1289, 106, -1442)
+            CFrameQuest = CFrame.new(1386, 87, -1297)
+            VectorQuest = Vector3.new(1386, 87, -1297)
+        elseif a == 120 or a <= 149 then
+            LevelFarm = 15
+            Name = "Chief Petty Officer"
+            QuestName = "MarineQuest2"
+            LevelQuest = 1
+            NameMon = "Chief Petty Officer"
+            CFrameMon = CFrame.new(-4855, 23, 4308)
+            VectorMon = Vector3.new(-4855, 23, 4308)
+            CFrameQuest = CFrame.new(-5036, 29, 4325)
+            VectorQuest = Vector3.new(-5036, 29, 4325)
+        elseif a == 150 or a <= 174 then
+            LevelFarm = 17
+            Name = "Sky Bandit"
+            QuestName = "SkyQuest"
+            LevelQuest = 1
+            NameMon = "Sky Bandit"
+            CFrameMon = CFrame.new(-4981, 278, -2830)
+            VectorMon = Vector3.new(-4981, 278, -2830)
+            CFrameQuest = CFrame.new(-4842, 718, -2623)
+            VectorQuest = Vector3.new(-4842, 718, -2623)
+        elseif a == 175 or a <= 189 then
+            LevelFarm = 18
+            Name = "Dark Master"
+            QuestName = "SkyQuest"
+            LevelQuest = 2
+            NameMon = "Dark Master"
+            CFrameMon = CFrame.new(-5250, 389, -2272)
+            VectorMon = Vector3.new(-5250, 389, -2272)
+            CFrameQuest = CFrame.new(-4842, 718, -2623)
+            VectorQuest = Vector3.new(-4842, 718, -2623)
+        elseif a == 190 or a <= 209 then
+            LevelFarm = 20
+            Name = "Prisoner"
+            QuestName = "PrisonerQuest"
+            LevelQuest = 1
+            NameMon = "Prisoner"
+            CFrameMon = CFrame.new(5411, 96, 690)
+            VectorMon = Vector3.new(5411, 96, 690)
+            CFrameQuest = CFrame.new(5308, 2, 474)
+            VectorQuest = Vector3.new(5308, 2, 474)
+        elseif a == 210 or a <= 249 then
+            LevelFarm = 21
+            Name = "Dangerous Prisoner"
+            QuestName = "PrisonerQuest"
+            LevelQuest = 2
+            NameMon = "Dangerous Prisoner"
+            CFrameMon = CFrame.new(5411, 96, 690)
+            VectorMon = Vector3.new(5411, 96, 690)
+            CFrameQuest = CFrame.new(5308, 2, 474)
+            VectorQuest = Vector3.new(5308, 2, 474)
+        elseif a == 250 or a <= 299 then
+            LevelFarm = 23
+            Name = "Toga Warrior"
+            QuestName = "ColosseumQuest"
+            LevelQuest = 1
+            NameMon = "Toga Warrior"
+            CFrameMon = CFrame.new(-1824, 50, -2743)
+            VectorMon = Vector3.new(-1824, 50, -2743)
+            CFrameQuest = CFrame.new(-1576, 8, -2985)
+            VectorQuest = Vector3.new(-1576, 8, -2985)
+        elseif a == 300 or a <= 329 then
+            LevelFarm = 25
+            Name = "Military Soldier"
+            QuestName = "MagmaQuest"
+            LevelQuest = 1
+            NameMon = "Military Soldier"
+            CFrameMon = CFrame.new(-5555.064453125, 16.73392105102539, 8377.623046875)
+            VectorMon = Vector3.new(-5555.064453125, 16.73392105102539, 8377.623046875)
+            CFrameQuest = CFrame.new(-5316, 12, 8517)
+            VectorQuest = Vector3.new(-5316, 12, 8517)
+        elseif a == 330 or a <= 374 then
+            LevelFarm = 26
+            Name = "Military Spy"
+            QuestName = "MagmaQuest"
+            LevelQuest = 2
+            NameMon = "Military Spy"
+            CFrameMon = CFrame.new(-5806.056640625, 99.96672058105469, 8777.8447265625)
+            VectorMon = Vector3.new(-5806.056640625, 99.96672058105469, 8777.8447265625)
+            CFrameQuest = CFrame.new(-5316, 12, 8517)
+            VectorQuest = Vector3.new(-5316, 12, 8517)
+        elseif a == 375 or a <= 399 then
+            LevelFarm = 28
+            Name = "Fishman Warrior"
+            QuestName = "FishmanQuest"
+            LevelQuest = 1
+            NameMon = "Fishman Warrior"
+            CFrameMon = CFrame.new(60859, 19, 1501)
+            VectorMon = Vector3.new(60859, 19, 1501)
+            CFrameQuest = CFrame.new(61123, 19, 1569)
+            VectorQuest = Vector3.new(61123, 19, 1569)
+        elseif a == 400 or a <= 449 then
+            LevelFarm = 29
+            Name = "Fishman Commando"
+            QuestName = "FishmanQuest"
+            LevelQuest = 2
+            NameMon = "Fishman Commando"
+            CFrameMon = CFrame.new(61891, 19, 1470)
+            VectorMon = Vector3.new(61891, 19, 1470)
+            CFrameQuest = CFrame.new(61123, 19, 1569)
+            VectorQuest = Vector3.new(61123, 19, 1569)
+        elseif a == 450 or a <= 474 then
+            LevelFarm = 31
+            Name = "God's Guard"
+            QuestName = "SkyExp1Quest"
+            LevelQuest = 1
+            NameMon = "God's Guards"
+            CFrameMon = CFrame.new(-4698, 845, -1912)
+            VectorMon = Vector3.new(-4698, 845, -1912)
+            CFrameQuest = CFrame.new(-4722, 845, -1954)
+            VectorQuest = Vector3.new(-4722, 846, -1954)
+        elseif a == 475 or a <= 524 then
+            LevelFarm = 33
+            Name = "Shanda"
+            QuestName = "SkyExp1Quest"
+            LevelQuest = 2
+            NameMon = "Shandas"
+            CFrameMon = CFrame.new(-7685, 5567, -502)
+            VectorMon = Vector3.new(-7685, 5567, -502)
+            CFrameQuest = CFrame.new(-7862, 5546, -380)
+            VectorQuest = Vector3.new(-7862, 5546, -380)
+        elseif a == 525 or a <= 549 then
+            LevelFarm = 34
+            Name = "Royal Squad"
+            QuestName = "SkyExp2Quest"
+            LevelQuest = 1
+            NameMon = "Royal Squad"
+            CFrameMon = CFrame.new(-7670, 5607, -1460)
+            VectorMon = Vector3.new(-7670, 5607, -1460)
+            CFrameQuest = CFrame.new(-7904, 5636, -1412)
+            VectorQuest = Vector3.new(-7904, 5636, -1412)
+        elseif a == 550 or a <= 624 then
+            LevelFarm = 35
+            Name = "Royal Soldier"
+            QuestName = "SkyExp2Quest"
+            LevelQuest = 2
+            NameMon = "Royal Soldier"
+            CFrameMon = CFrame.new(-7828, 5607, -1744)
+            VectorMon = Vector3.new(-7828, 5607, -1744)
+            CFrameQuest = CFrame.new(-7904, 5636, -1412)
+            VectorQuest = Vector3.new(-7904, 5636, -1412)
+        elseif a == 625 or a <= 649 then
+            LevelFarm = 37
+            Name = "Galley Pirate"
+            QuestName = "FountainQuest"
+            LevelQuest = 1
+            NameMon = "Galley Pirate"
+            CFrameMon = CFrame.new(5589, 45, 3996)
+            VectorMon = Vector3.new(5589, 45, 3996)
+            CFrameQuest = CFrame.new(5256, 39, 4050)
+            VectorQuest = Vector3.new(5256, 39, 4050)
+        elseif a >= 650 then
+            LevelFarm = 38
+            Name = "Galley Captain"
+            QuestName = "FountainQuest"
+            LevelQuest = 2
+            NameMon = "Galley Captain"
+            CFrameMon = CFrame.new(5649, 39, 4936)
+            VectorMon = Vector3.new(5649, 39, 4936)
+            CFrameQuest = CFrame.new(5256, 39, 4050)
+            VectorQuest = Vector3.new(5256, 39, 4050)
+        end
+    end
+
