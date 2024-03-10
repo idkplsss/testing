@@ -1,66 +1,39 @@
-local Player = game.Players.LocalPlayer
-
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Never Hub", HidePremium = false, Intro = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "DK_NEVER HUB", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
-do
-	--------------------------------------------------------------------------------------------------------------------------------------------
-		repeat wait() until game.Players
-		repeat wait() until game.Players.LocalPlayer
-		repeat wait() until game.ReplicatedStorage
-		repeat wait() until game.ReplicatedStorage:FindFirstChild("Remotes");
-		repeat wait() until game.Players.LocalPlayer:FindFirstChild("PlayerGui");
-		repeat wait() until game.Players.LocalPlayer.PlayerGui:FindFirstChild("Main");
-		repeat wait() until game:GetService("Players")
-		repeat wait() until game:GetService("Players").LocalPlayer.Character:FindFirstChild("Energy")
-		
-		wait(0.1)
-		
-		if not game:IsLoaded() then repeat game.Loaded:Wait() until game:IsLoaded() end
-		
-		if game:GetService("Players").LocalPlayer.PlayerGui.Main:FindFirstChild("ChooseTeam") then
-			repeat wait()
-				if game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("Main").ChooseTeam.Visible == true then
-					if _G.Team == "Pirate" then
-						for i, v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Pirates.Frame.ViewportFrame.TextButton.Activated)) do                                                                                                
-							v.Function()
-						end
-					elseif _G.Team == "Marine" then
-						for i, v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Marines.Frame.ViewportFrame.TextButton.Activated)) do                                                                                                
-							v.Function()
-						end
-					else
-						for i, v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Pirates.Frame.ViewportFrame.TextButton.Activated)) do                                                                                                
-							v.Function()
-						end
-					end
-				end
-			until game.Players.LocalPlayer.Team ~= nil and game:IsLoaded()
-		end
+--[[
+Name = <string> - The name of the UI.
+HidePremium = <bool> - Whether or not the user details shows Premium status or not.
+SaveConfig = <bool> - Toggles the config saving in the UI.
+ConfigFolder = <string> - The name of the folder where the configs are saved.
+IntroEnabled = <bool> - Whether or not to show the intro animation.
+IntroText = <string> - Text to show in the intro animation.
+IntroIcon = <string> - URL to the image you want to use in the intro animation.
+Icon = <string> - URL to the image you want displayed on the window.
+CloseCallback = <function> - Function to execute when the window is closed.
+]]
 
 
-
-
-local tap1 = Window:MakeTab({
-	Name = "Information",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-OrionLib:MakeNotification({
-	Name = "Never Hub",
-	Content = "Make By Quang Vuong",
-	Image = "rbxassetid://4483345998",
-	Time = 5
-})
-Tab:AddButton({
-	Name = "speed",
-	Callback = function()
-      		Player.Character.Humanoid.WalkSpeed = 1000
-  	end    
+local Window = OrionLib:CreateWindow({
+    Title = "Never Hub",
+    SubTitle = "by Quanng Vuong",
+    TabWidth = 180,
+    Size = UDim2.fromOffset(450, 300),
+    Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
+    Theme = "Darker",
+    MinimizeKey = Enum.KeyCode.End -- Used when theres no MinimizeKeybind
 })
 
-
-
-
-
-Orionlib:Init()
+local Tabs = {
+    Main = Window:AddTab({ Title = "Main", Icon = "home" }),
+    Stats = Window:AddTab({ Title = "Stats", Icon = "plus-circle" }),
+    Player = Window:AddTab({ Title = "Player", Icon = "baby" }),
+    Teleport = Window:AddTab({ Title = "Teleport", Icon = "palmtree" }),
+    Fruit = Window:AddTab({ Title = "Devil Fruit", Icon = "cherry" }),
+    Raid = Window:AddTab({ Title = "Dungeon", Icon = "swords" }),
+    Race = Window:AddTab({ Title = "Race V4", Icon = "chevrons-right" }),
+    Shop = Window:AddTab({ Title = "Shop", Icon = "shopping-cart" }),
+    Setting = Window:AddTab({ Title = "Setting", Icon = "settings" }),
+	Misc = Window:AddTab({ Title = "Misc", Icon = "list-plus" }),
+}
+local Options = OrionLib.Options
