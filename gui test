@@ -1,5 +1,5 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "DK_NEVER HUB", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "DK HUB", HidePremium = false,IntroText = "DK Hub", SaveConfig = true, ConfigFolder = "OrionTest"})
 
 --[[
 Name = <string> - The name of the UI.
@@ -13,21 +13,15 @@ Icon = <string> - URL to the image you want displayed on the window.
 CloseCallback = <function> - Function to execute when the window is closed.
 ]]
 
-
-local Window = OrionLib:CreateWindow({
-    Title = "Never Hub",
-    SubTitle = "by Quanng Vuong",
-    TabWidth = 180,
-    Size = UDim2.fromOffset(450, 300),
-    Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
-    Theme = "Darker",
-    MinimizeKey = Enum.KeyCode.End -- Used when theres no MinimizeKeybind
+local FarmTab = Window:MakeTab({
+	Name = "AutoFarm",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
 })
 
-Tab:AddButton({
-    Name = "speed",
-    Callback = function()
-              Player.Character.Humanoid.WalkSpeed = 1000
-      end
-})
+
+
+
+
+
 Orionlib:Init()
