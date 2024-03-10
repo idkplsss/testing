@@ -1,30 +1,33 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Never Hub", HidePremium = false, Intro = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "DK_NEVER HUB", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
-local Player = game.Players.LocalPlayer
+--[[
+Name = <string> - The name of the UI.
+HidePremium = <bool> - Whether or not the user details shows Premium status or not.
+SaveConfig = <bool> - Toggles the config saving in the UI.
+ConfigFolder = <string> - The name of the folder where the configs are saved.
+IntroEnabled = <bool> - Whether or not to show the intro animation.
+IntroText = <string> - Text to show in the intro animation.
+IntroIcon = <string> - URL to the image you want to use in the intro animation.
+Icon = <string> - URL to the image you want displayed on the window.
+CloseCallback = <function> - Function to execute when the window is closed.
+]]
 
-local tap1 = Window:MakeTab({
-    Name = "Information",
-    Icon = "rbxassetid://4483345998",
-    PremiumOnly = false
+
+local Window = OrionLib:CreateWindow({
+    Title = "Never Hub",
+    SubTitle = "by Quanng Vuong",
+    TabWidth = 180,
+    Size = UDim2.fromOffset(450, 300),
+    Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
+    Theme = "Darker",
+    MinimizeKey = Enum.KeyCode.End -- Used when theres no MinimizeKeybind
 })
-OrionLib:MakeNotification({
-    Name = "Never Hub",
-    Content = "Make By Quang Vuong",
-    Image = "rbxassetid://4483345998",
-    Time = 5
-})
+
 Tab:AddButton({
     Name = "speed",
     Callback = function()
               Player.Character.Humanoid.WalkSpeed = 1000
       end
 })
-
-
-
-
-
-
-end
-Orionlib:Init(
+Orionlib:Init()
