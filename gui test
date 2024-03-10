@@ -13,13 +13,45 @@ Icon = <string> - URL to the image you want displayed on the window.
 CloseCallback = <function> - Function to execute when the window is closed.
 ]]
 
+OrionLib:MakeNotification({
+	Name = "correct",
+	Content = "Nhìn cái con cak ",
+	Image = "rbxassetid://4483345998",
+	Time = 1
+})
+
+
+
+
+
+--tabs
 local FarmTab = Window:MakeTab({
 	Name = "AutoFarm",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
+--toggles
+Tab:AddToggle({
+	Name = "Auto Farm",
+	Default = false,
+	Callback = function(Value)
+		print(value)
+	end    
+})
 
 
+
+local SettingTab = Window:MakeTab({
+	Name = "Setiing",
+	Icon = "rbxassetid://9606644121",
+	PremiumOnly = false
+})
+
+local Miss = Window:MakeTab({
+    Name = "Miss",
+    Icon = " rbxassetid://11447063791",
+    PremiumOnly = false
+})
 
 
 
