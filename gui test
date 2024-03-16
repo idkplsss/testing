@@ -1,5 +1,5 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Title of the library",IntroText = "DK_HUB", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Make by Jae and Never",IntroText = "DK_HUB", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 --[[
 Name = <string> - The name of the UI.
@@ -14,13 +14,12 @@ CloseCallback = <function> - Function to execute when the window is closed.
 ]]
 
 local main = Window:MakeTab({
-	Name = "Auto Farm",
-    Name = "Setting",
-    Name = "Race v4",
-    Name = "Auto Raid",
-    Name = "Auto Fruit",
-    Name = "Auto tele",
-    Name = "Miss",
+    Name = "Farm",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local main = Window:MakeTab({
+    Name = "Raid",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
