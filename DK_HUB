@@ -12,16 +12,16 @@ local Window = Fluent:CreateWindow({
     MinimizeKey = Enum.KeyCode.End -- Used when theres no MinimizeKeybind
 })
 local Tabs = {
-    Main = Window:AddTab({ Title = "EZZZ", Icon = "home" }),
+    Main = Window:AddTab({ Title = "Main", Icon = "home" }),
     Setting = Window:AddTab({ Title = "Settding", Icon = "settings" }),
     Stats = Window:AddTab({ Title = "Stadts", Icon = "plus-circle" }),
     Player = Window:AddTab({ Title = "d", Icon = "baby" }),
     Teleport = Window:AddTab({ Title = "Teldeport", Icon = "palmtree" }),
     Fruit = Window:AddTab({ Title = "Devidl Fruit", Icon = "cherry" }),
     Raid = Window:AddTab({ Title = "Dungdeon", Icon = "swords" }),
-    Race = Window:AddTab({ Title = "d V4", Icon = "chevrons-right" }),
+    Race = Window:AddTab({ Title = "Race V4", Icon = "chevrons-right" }),
     Shop = Window:AddTab({ Title = "Shop", Icon = "shopping-cart" }),
-	Misc = Window:AddTab({ Title = "d", Icon = "list-plus" }),
+	Misc = Window:AddTab({ Title = "Miss", Icon = "list-plus" }),
 }
 local Options = Fluent.Options
 
@@ -6278,3 +6278,5 @@ Tabs.Misc:AddButton({
 		game.Players.localPlayer.PlayerGui.Main.Titles.Visible = true
 	end
 })
+
+OrionLib:Init()
