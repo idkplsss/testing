@@ -3438,26 +3438,25 @@ spawn(function()
     end
 end)
 
+FastAttack = {"Slow","Fast","Extreme"};
+M:Dropdown("Fast Attack Speed", FastAttack, function(value)
+	SelectSpeedFast = value;
+end);
+SelectSpeedFast = "Fast" or SelectSpeedFast;
+if (SelectSpeedFast == "Slow") then
+	_G.Fast_Delay = 5;
+elseif (SelectSpeedFast == "Fast") then
+	_G.Fast_Delay = 0.025;
+elseif (SelectSpeedFast == "Extreme") then
+	_G.Fast_Delay = 0.001;
+end
+
 ---try fast attack
 
 
 
 
-local Section = M:AddSection({
-    Name = "Fast Attack :"
-})
 
-M:AddToggle({
-    Name = "No Cooldown",
-    Default = true,
-    Flag = "FastAttack",
-    Save = false,
-    Callback = function(Value)
----fast attack soon..... 
-
-    _G.FastAttack = Value
-end   
-})
 local CameraShaker = require(game.ReplicatedStorage.Util.CameraShaker)
 CombatFrameworkR = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
 y = debug.getupvalues(CombatFrameworkR)[2]
@@ -3491,7 +3490,7 @@ spawn(function()
     end)
 end)
 
-    _G.FastAttackDelay = 0.05
+    
            
 local Section = M:AddSection({
     Name = "Bypass Teleport"
