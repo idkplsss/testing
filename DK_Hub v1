@@ -2483,7 +2483,7 @@ function isnil(thing)
     ToggleButton.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
     ToggleButton.Size = UDim2.new(0, 50, 0, 50)
     ToggleButton.Font = Enum.Font.SourceSans
-    ToggleButton.Text = "Open Ui"
+    ToggleButton.Text = "Dk ez"
     ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
     ToggleButton.TextSize = 14.000
     ToggleButton.Draggable = true
@@ -2492,19 +2492,20 @@ function isnil(thing)
     end)
 
     ----gui
-   local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
-local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
-local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
---------------------------------------------------------------------------------------------------------------------------------------------
-local Window = Fluent:CreateWindow({
-    Title = "DK_HUB",
-    SubTitle = "by Quang Vuong",
-    TabWidth = 180,
-    Size = UDim2.fromOffset(450, 300),
-    Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
-    Theme = "Darker",
-    MinimizeKey = Enum.KeyCode.End -- Used when theres no MinimizeKeybind
-})   
+    local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+    local Window = OrionLib:MakeWindow({Name = "Dk_Hub", HidePremium = false,IntroText = "Welcome to Dk_Hub", SaveConfig = true, ConfigFolder = "OrionTest"})
+
+    --[[
+    Name = <string> - The name of the UI.
+    HidePremium = <bool> - Whether or not the user details shows Premium status or not.
+    SaveConfig = <bool> - Toggles the config saving in the UI.
+    ConfigFolder = <string> - The name of the folder where the configs are saved.
+    IntroEnabled = <bool> - Whether or not to show the intro animation.
+    IntroText = <string> - Text to show in the intro animation.
+    IntroIcon = <string> - URL to the image you want to use in the intro animation.
+    Icon = <string> - URL to the image you want displayed on the window.
+    CloseCallback = <function> - Function to execute when the window is closed.
+    ]]
 ---tap
 local W = Window:MakeTab({
     Name = "Information",
@@ -2533,7 +2534,7 @@ local S = Window:MakeTab({
 })
 
 local E = Window:MakeTab({
-    Name = "djt me may",
+    Name = "ESP",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
@@ -2575,7 +2576,7 @@ local R = Window:MakeTab({
 })
 
 local SH = Window:MakeTab({
-    Name = "Store",
+    Name = "Shop",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
@@ -3437,18 +3438,25 @@ spawn(function()
     end
 end)
 
+---try fast attack
+
+
+
+
 local Section = M:AddSection({
     Name = "Fast Attack :"
 })
 
 M:AddToggle({
-    Name = "No cooldown",
+    Name = "No Cooldown",
     Default = true,
     Flag = "FastAttack",
     Save = false,
     Callback = function(Value)
-        _G.FastAttack = Value
-    end    
+---fast attack soon..... 
+
+    _G.FastAttack = Value
+end   
 })
 local CameraShaker = require(game.ReplicatedStorage.Util.CameraShaker)
 CombatFrameworkR = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
@@ -3483,7 +3491,7 @@ spawn(function()
     end)
 end)
 
-    _G.FastAttackDelay = 0.2
+    _G.FastAttackDelay = 0,000000000000003
            
 local Section = M:AddSection({
     Name = "Bypass Teleport"
