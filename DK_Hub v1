@@ -2493,7 +2493,7 @@ function isnil(thing)
 
     ----gui
     local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-    local Window = OrionLib:MakeWindow({Name = "Min Gaming Hub", HidePremium = false, IntroText = "DK_Hub V1", SaveConfig = true, ConfigFolder = "DK_Hub"})    
+    local Window = OrionLib:MakeWindow({Name = "Dk_Hub", HidePremium = false, IntroText = "DK_Hub V1", SaveConfig = true, ConfigFolder = "DK_Hub"})    
 ---tap
 local W = Window:MakeTab({
     Name = "Information",
