@@ -2492,8 +2492,19 @@ function isnil(thing)
     end)
 
     ----gui
-    local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-    local Window = OrionLib:MakeWindow({Name = "Dk_Hub", HidePremium = false, IntroText = "DK_Hub V1", SaveConfig = true, ConfigFolder = "DK_Hub"})    
+   local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
+local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
+--------------------------------------------------------------------------------------------------------------------------------------------
+local Window = Fluent:CreateWindow({
+    Title = "DK_HUB",
+    SubTitle = "by Quang Vuong",
+    TabWidth = 180,
+    Size = UDim2.fromOffset(450, 300),
+    Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
+    Theme = "Darker",
+    MinimizeKey = Enum.KeyCode.End -- Used when theres no MinimizeKeybind
+})   
 ---tap
 local W = Window:MakeTab({
     Name = "Information",
