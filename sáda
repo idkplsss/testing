@@ -2493,7 +2493,7 @@ function isnil(thing)
 
     ----gui
     local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-    local Window = OrionLib:MakeWindow({Name = "Dk_Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+    local Window = OrionLib:MakeWindow({Name = "Dk_Hub", HidePremium = false,Introtext = "Welcome to Dk_Hub", SaveConfig = true, ConfigFolder = "OrionTest"})
 
     --[[
     Name = <string> - The name of the UI.
@@ -2534,7 +2534,7 @@ local S = Window:MakeTab({
 })
 
 local E = Window:MakeTab({
-    Name = "djt me may",
+    Name = "ESP",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
@@ -2576,7 +2576,7 @@ local R = Window:MakeTab({
 })
 
 local SH = Window:MakeTab({
-    Name = "Store",
+    Name = "Shop",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
@@ -3438,17 +3438,33 @@ spawn(function()
     end
 end)
 
+---try fast attack
+
+_G.autoTap = true
+
+function autoTab()
+    while _G.autoTab == true do
+        game:GetService("ReplicatedStorage").Remove.Tap:FireSever()
+        wait(0,002)
+    end 
+end
+
+
 local Section = M:AddSection({
     Name = "Fast Attack :"
 })
 
 M:AddToggle({
-    Name = "No cooldown",
+    Name = "No Cooldown",
     Default = true,
     Flag = "FastAttack",
     Save = false,
     Callback = function(Value)
-        _G.FastAttack = Value
+---fast attack soon..... 
+
+
+        _G.autoTab = Value
+        autoTab()
     end    
 })
 local CameraShaker = require(game.ReplicatedStorage.Util.CameraShaker)
