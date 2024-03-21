@@ -3440,14 +3440,7 @@ end)
 
 ---try fast attack
 
-_G.autoTap = true
 
-function autoTab()
-    while _G.autoTab == true do
-        game:GetService("ReplicatedStorage").Remove.Tap:FireSever()
-        wait(0,002)
-    end 
-end
 
 
 local Section = M:AddSection({
@@ -3462,10 +3455,8 @@ M:AddToggle({
     Callback = function(Value)
 ---fast attack soon..... 
 
-
-        _G.autoTab = Value
-        autoTab()
-    end    
+    _G.FastAttack = Value
+end   
 })
 local CameraShaker = require(game.ReplicatedStorage.Util.CameraShaker)
 CombatFrameworkR = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
@@ -3500,7 +3491,7 @@ spawn(function()
     end)
 end)
 
-    _G.FastAttackDelay = 0.2
+    _G.FastAttackDelay = 0.000000000000000002
            
 local Section = M:AddSection({
     Name = "Bypass Teleport"
