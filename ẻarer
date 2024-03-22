@@ -3438,25 +3438,19 @@ spawn(function()
     end
 end)
 
----try fast attack
-
-
-
-
 local Section = M:AddSection({
     Name = "Fast Attack :"
 })
 
 M:AddToggle({
-    Name = "No Cooldown",
+    Name = "Đánh Nhanh",
     Default = true,
     Flag = "FastAttack",
     Save = false,
     Callback = function(Value)
----fast attack soon..... 
-
-    _G.FastAttack = Value
-end   
+        _G.FastAttack = Value
+        _G._G.BringMode = Value
+    end    
 })
 local CameraShaker = require(game.ReplicatedStorage.Util.CameraShaker)
 CombatFrameworkR = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
@@ -3469,7 +3463,7 @@ spawn(function()
                     CameraShaker:Stop()
                     y.activeController.timeToNextAttack = (math.huge^math.huge^math.huge)
                     y.activeController.timeToNextAttack = 0
-                    y.activeController.hitboxMagnitude = 50
+                    y.activeController.hitboxMagnitude = 60
                     y.activeController.active = false
                     y.activeController.timeToNextBlock = 0
                     y.activeController.focusStart = 1655503339.0980349
@@ -3491,7 +3485,8 @@ spawn(function()
     end)
 end)
 
-    _G.FastAttackDelay = 0.004
+    _G.FastAttackDelay = 0.0003
+    
            
 local Section = M:AddSection({
     Name = "Bypass Teleport"
