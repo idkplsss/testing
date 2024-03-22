@@ -3438,25 +3438,19 @@ spawn(function()
     end
 end)
 
-FastAttack = {"Slow","Fast","Extreme"};
-M:Dropdown("Fast Attack Speed", FastAttack, function(value)
-	SelectSpeedFast = value;
-end);
-SelectSpeedFast = "Fast" or SelectSpeedFast;
-if (SelectSpeedFast == "Slow") then
-	_G.Fast_Delay = 5;
-elseif (SelectSpeedFast == "Fast") then
-	_G.Fast_Delay = 0.025;
-elseif (SelectSpeedFast == "Extreme") then
-	_G.Fast_Delay = 0.001;
-end
+local Section = M:AddSection({
+    Name = "Fast Attack :"
+})
 
----try fast attack
-
-
-
-
-
+M:AddToggle({
+    Name = "Đánh Nhanh",
+    Default = true,
+    Flag = "FastAttack",
+    Save = false,
+    Callback = function(Value)
+        _G.FastAttack = Value
+    end    
+})
 local CameraShaker = require(game.ReplicatedStorage.Util.CameraShaker)
 CombatFrameworkR = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
 y = debug.getupvalues(CombatFrameworkR)[2]
@@ -3467,7 +3461,7 @@ spawn(function()
                 pcall(function()
                     CameraShaker:Stop()
                     y.activeController.timeToNextAttack = (math.huge^math.huge^math.huge)
-                    y.activeController.timeToNextAttack = 2
+                    y.activeController.timeToNextAttack = 0
                     y.activeController.hitboxMagnitude = 60
                     y.activeController.active = false
                     y.activeController.timeToNextBlock = 0
@@ -3490,6 +3484,7 @@ spawn(function()
     end)
 end)
 
+    _G.FastAttackDelay = 0.0003
     
            
 local Section = M:AddSection({
