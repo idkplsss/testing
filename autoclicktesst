@@ -1,0 +1,44 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({Name = "Test auto Click", HidePremium = false,IntroText = "Script Hub", SaveConfig = true, ConfigFolder = "OrionTest"})
+
+
+
+
+
+local Farm = Window:MakeTab({
+	Name = "Auto Click",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Section = Farm:AddSection({
+    Name = "Fast Attack :"
+})
+
+_G.autoclick = true
+
+function autoclick()
+    while _G.autoclick == true do
+        game:GetService("ReplicatedStorage").Remotes.tap:FireServer()
+        wait(0,0002)
+    end
+end
+
+
+
+Farm:AddToggle({
+    Name = "Đánh Nhanh",
+    Default = true,
+    Flag = "FastAttack",
+    Save = false,
+    Callback = function(Value)
+        _G.autoclick = Value
+        autoclick()
+    end    
+})
+--[[
+Name = <string> - The name of the tab.
+Icon = <string> - The icon of the tab.
+PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
+]]
+OrionLib:Init()
