@@ -3459,7 +3459,7 @@ spawn(function()
     end)
 end)
 
-    _G.FastAttackDelay = 0.0005
+    _G.FastAttackDelay = 0.0009
     
            
 local Section = M:AddSection({
