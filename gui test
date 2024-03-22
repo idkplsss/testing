@@ -3409,37 +3409,6 @@ M:AddToggle({
         _G.BringMonster = Value
     end    
 })
-local Bring = {"Low", "Normal", "Super Bring"}
-_G.BringMode = "Normal"
-M:AddDropdown({
-    Name = "Bring Mode",
-    Default = "Normal",
-    Options = Bring,
-    Default = false,
-    Flag = "Bring Mode",
-    Save = true,
-    Callback = function(Value)
-        _G.BringMode = Value
-    end    
-})
-spawn(function()
-    while wait(.1) do
-        if _G.BringMode then
-            pcall(function()
-                if _G.BringMode == "Low" then
-                    _G.BringMode = 300
-                elseif _G.BringMode == "Normal" then
-                    _G.BringMode = 375
-                elseif _G.BringMode == "Super Bring" then
-                    _G.BringMode = 450
-                end
-            end)
-        end
-    end
-end)
-
----try fast attack
-
 
 
 
@@ -3448,15 +3417,14 @@ local Section = M:AddSection({
 })
 
 M:AddToggle({
-    Name = "No Cooldown",
+    Name = "Đánh Nhanh",
     Default = true,
     Flag = "FastAttack",
     Save = false,
     Callback = function(Value)
----fast attack soon..... 
-
-    _G.FastAttack = Value
-end   
+        _G.FastAttack = Value
+    
+    end    
 })
 local CameraShaker = require(game.ReplicatedStorage.Util.CameraShaker)
 CombatFrameworkR = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
@@ -3469,7 +3437,7 @@ spawn(function()
                     CameraShaker:Stop()
                     y.activeController.timeToNextAttack = (math.huge^math.huge^math.huge)
                     y.activeController.timeToNextAttack = 0
-                    y.activeController.hitboxMagnitude = 50
+                    y.activeController.hitboxMagnitude = 9
                     y.activeController.active = false
                     y.activeController.timeToNextBlock = 0
                     y.activeController.focusStart = 1655503339.0980349
@@ -3491,7 +3459,8 @@ spawn(function()
     end)
 end)
 
-    _G.FastAttackDelay = 0.0005
+    _G.FastAttackDelay = 0.0009
+    
            
 local Section = M:AddSection({
     Name = "Bypass Teleport"
