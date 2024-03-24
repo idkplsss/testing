@@ -48,13 +48,13 @@ function CheckQuest()
             NameMon = "Brute"
             CFrameQuest = CFrame.new(-1141.07483, 4.10001802, 3831.5498, 0.965929627, -0, -0.258804798, 0, 1, -0, 0.258804798, 0, 0.965929627)
             CFrameMon = CFrame.new(-1140.083740234375, 14.809885025024414, 4322.92138671875)
-        elseif MyLevel == 60 or MyLevel <= 74 then
-            Mon = "Desert Bandit"
-            LevelQuest = 1
+        elseif Lv == 60 or Lv <= 74 or SelectMonster == "Desert Bandit" or SelectArea == 'Desert' then -- Desert Bandit
+            Ms = "Desert Bandit"
             NameQuest = "DesertQuest"
+            QuestLv = 1
             NameMon = "Desert Bandit"
-            CFrameQuest = CFrame.new(894.488647, 5.14000702, 4392.43359, 0.819155693, -0, -0.573571265, 0, 1, -0, 0.573571265, 0, 0.819155693)
-            CFrameMon = CFrame.new(924.7998046875, 6.44867467880249, 4481.5859375)
+            CFrameQ = CFrame.new(896.51721191406, 6.4384617805481, 4390.1494140625)
+            CFrameMon = CFrame.new(984.99896240234, 16.109552383423, 4417.91015625)
         elseif MyLevel == 75 or MyLevel <= 89 then
             Mon = "Desert Officer"
             LevelQuest = 2
@@ -1735,15 +1735,15 @@ function isnil(thing)
             function TP(Pos)
             Distance = (Pos.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
             if Distance < 25 then
-                Speed = 10000
+                Speed = 250
             elseif Distance < 50 then
-                Speed = 2000
+                Speed = 250
             elseif Distance < 150 then
-                Speed = 800
+                Speed = 250
             elseif Distance < 250 then
-                Speed = 600
+                Speed = 250
             elseif Distance < 500 then
-                Speed = 400
+                Speed = 250
             elseif Distance < 750 then
                 Speed = 250
             elseif Distance >= 1000 then
@@ -1759,19 +1759,19 @@ function isnil(thing)
             function TP1(Pos)
                 Distance = (Pos.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
                 if Distance < 25 then
-                    Speed = 10000
+                    Speed = 250
                 elseif Distance < 50 then
-                    Speed = 9000
+                    Speed = 250
                 elseif Distance < 150 then
-                    Speed = 9000
+                    Speed = 250
                 elseif Distance < 250 then
-                    Speed = 9000
+                    Speed = 250
                 elseif Distance < 500 then
-                    Speed = 9000
+                    Speed = 250
                 elseif Distance < 750 then
-                    Speed = 9000
+                    Speed = 250
                 elseif Distance >= 1000 then
-                    Speed = 9000
+                    Speed = 200
                 end
                 game:GetService("TweenService"):Create(
                     game:GetService("Players").LocalPlayer.Character.HumanoidRootPart,
@@ -1782,15 +1782,15 @@ function isnil(thing)
         function topos(Pos)
             Distance = (Pos.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
             if Distance < 25 then
-                Speed = 5000
+                Speed = 250
             elseif Distance < 50 then
-                Speed = 2000
+                Speed = 250
             elseif Distance < 150 then
-                Speed = 800
+                Speed = 250
             elseif Distance < 250 then
-                Speed = 600
+                Speed = 250
             elseif Distance < 500 then
-                Speed = 300
+                Speed = 250
             elseif Distance < 750 then
                 Speed = 250
             elseif Distance >= 1000 then
@@ -3409,34 +3409,8 @@ M:AddToggle({
         _G.BringMonster = Value
     end    
 })
-local Bring = {"Low", "Normal", "Super Bring"}
-_G.BringMode = "Normal"
-M:AddDropdown({
-    Name = "Bring Mode",
-    Default = "Normal",
-    Options = Bring,
-    Default = false,
-    Flag = "Bring Mode",
-    Save = true,
-    Callback = function(Value)
-        _G.BringMode = Value
-    end    
-})
-spawn(function()
-    while wait(.1) do
-        if _G.BringMode then
-            pcall(function()
-                if _G.BringMode == "Low" then
-                    _G.BringMode = 300
-                elseif _G.BringMode == "Normal" then
-                    _G.BringMode = 375
-                elseif _G.BringMode == "Super Bring" then
-                    _G.BringMode = 450
-                end
-            end)
-        end
-    end
-end)
+
+
 
 local Section = M:AddSection({
     Name = "Fast Attack :"
@@ -3449,7 +3423,7 @@ M:AddToggle({
     Save = false,
     Callback = function(Value)
         _G.FastAttack = Value
-        _G._G.BringMode = Value
+    
     end    
 })
 local CameraShaker = require(game.ReplicatedStorage.Util.CameraShaker)
@@ -3463,7 +3437,7 @@ spawn(function()
                     CameraShaker:Stop()
                     y.activeController.timeToNextAttack = (math.huge^math.huge^math.huge)
                     y.activeController.timeToNextAttack = 0
-                    y.activeController.hitboxMagnitude = 60
+                    y.activeController.hitboxMagnitude = 50
                     y.activeController.active = false
                     y.activeController.timeToNextBlock = 0
                     y.activeController.focusStart = 1655503339.0980349
@@ -3485,7 +3459,7 @@ spawn(function()
     end)
 end)
 
-    _G.FastAttackDelay = 0.0003
+    _G.FastAttackDelay = 0.0005
     
            
 local Section = M:AddSection({
